@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pickup_location: MyString
+  dropoff_location: MyString
+  pickup_date: 2017-01-03
+  dropoff_date: 2017-01-03
+  description: MyText
+  special_notes: MyText
+  delivered: false
+
+two:
+  pickup_location: MyString
+  dropoff_location: MyString
+  pickup_date: 2017-01-03
+  dropoff_date: 2017-01-03
+  description: MyText
+  special_notes: MyText
+  delivered: false
