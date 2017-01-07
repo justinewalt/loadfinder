@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates_uniqueness_of :email
-  attr_accessor :terms_accepted
-  # attr_accessor :haulier_or_shipper
+
+  validates_presence_of :terms_accepted
+
   # before_validation :assign_roles
 
     # def assign_roles

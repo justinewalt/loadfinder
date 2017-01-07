@@ -4,8 +4,8 @@
   <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :salutation , placeholder: "Mr or Mrs"%>
-      <%= f.text_field :salutation, autofocus: true %>
+      <%= f.label :title , placeholder: "Mr or Mrs"%>
+      <%= f.text_field :title, autofocus: true %>
     </div>
 
     <div class="field">
@@ -29,25 +29,21 @@
     </div>
 
     <div class="field">
-      <%= f.label :type_of_user %>
-      <%= f.text_field :type_of_user %>
-    </div>
-
-    <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email %>
     </div>
 
     <div class="field">
-      <%= f.label :haulier_or_shipper %>
-      <%= f.radio_button :haulier_or_shipper, 'Haulier', :value => 'haulier' %>
-      <%= f.label :haulier_or_shipper %>
-      <%= f.radio_button :haulier_or_shipper, 'Ship Load', :value => 'shipper' %>
+      <%= f.label :Haulier %>
+      <%= f.radio_button :company_type, 'Haulier', :value => 'haulier' %>
+      <br/>
+      <%= f.label :shipper %>
+      <%= f.radio_button :company_type, 'Ship Load', :value => 'shipper' %>
     </div>
 
     <div class="field">
       <%= f.label :terms_accepted %>
-      <%= f.radio_button :terms_accepted, checked: false %>
+      <%= f.check_box :terms_accepted, checked: false, required: true %>
     </div>
 
   <div class="field">

@@ -35,15 +35,15 @@ ActiveRecord::Schema.define(version: 20170104052750) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "salutation",             default: "",      null: false
+    t.string   "title",                  default: "",      null: false
     t.string   "first_name",             default: "",      null: false
     t.string   "last_name",              default: "",      null: false
     t.string   "nickname",               default: ""
     t.string   "email",                  default: "",      null: false
-    t.integer  "phone"
-    t.boolean  "haulier_or_shipper",                       null: false
+    t.string   "phone"
+    t.string   "company_type",                             null: false
     t.string   "type_of_user",           default: "Admin", null: false
-    t.boolean  "terms_accepted",                           null: false
+    t.boolean  "terms_accepted"
     t.string   "encrypted_password",     default: "",      null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
