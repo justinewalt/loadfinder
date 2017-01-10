@@ -1,0 +1,31 @@
+<div>
+  <h1><%= @job.pickup_date, @job.delivered %></h1>
+  <%= button_to 'Add Address', new_job_address_path(@job), method: :get %>
+
+  <% if @addresses.any? %>
+
+  <div class='row'>
+
+    <%= @addresses.each do |address| %>
+      <div class="panel panel-success">
+        <div class="panel-heading">Address Information</div>
+        <div class="panel-body">
+          <p>...</p>
+        </div>
+
+        <ul class="list-group">
+          <li class="list-group-item"><%= job.address. %></li>
+          <li class="list-group-item"><%= job.address.SubDistrict %></li>
+          <li class="list-group-item"><%= job.address.District %></li>
+          <li class="list-group-item"><%= job.address.Country %></li>
+          <li class="list-group-item"><%= job.address.PostalCode %></li>
+          <li class="list-group-item"><%= job.address.Province %></li>
+          <li class="list-group-item"><%= link_to 'Edit Address', jobs_path(@job, @address) %></li>
+        </ul>
+      </div>
+    <% end %>
+      <% else %>
+        <h3>To get started, add an address for this Job.</h3>
+      <% end %>
+  </div>
+</div>
