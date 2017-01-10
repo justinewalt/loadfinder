@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :bids
   end
+
+  get 'shipper', to: 'shipper#home', as: 'shipper'
+  get 'haulier', to: 'haulier#home', as: 'haulier'
 end
