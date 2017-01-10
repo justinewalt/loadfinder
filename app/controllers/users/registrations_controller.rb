@@ -9,7 +9,6 @@ before_action :configure_account_update_params, only: [:update]
 
   # POST /resource
   def create
-    binding.pry
     if params[:user][:terms_accepted] == '1'
       params[:user][:terms_accepted] = 'true'
     end
