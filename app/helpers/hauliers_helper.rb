@@ -1,0 +1,2 @@
+module HauliersHelper
+end

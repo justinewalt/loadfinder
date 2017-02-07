@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :jobs
   has_many :bids
+  belongs_to :companies
 
   validates_presence_of :terms_accepted
 

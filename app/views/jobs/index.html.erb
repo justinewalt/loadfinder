@@ -15,15 +15,19 @@
         </div>
 
         <ul class="list-group">
-          <li class="list-group-item"><%= job.PickupDate %></li>
-          <li class="list-group-item"><%= job.DeliveryDate %></li>
-          <li class="list-group-item"><%= job.address.StreetAddress %></li>
-          <li class="list-group-item"><%= job.address.SubDistrict %></li>
-          <li class="list-group-item"><%= job.address.District %></li>
-          <li class="list-group-item"><%= job.address.Country %></li>
-          <li class="list-group-item"><%= job.address.PostalCode %></li>
-          <li class="list-group-item"><%= job.address.Province %></li>
-          <li class="list-group-item"><%= link_to 'Edit Pickup or Delivery Dates', edit_job_path(job) %></li>
+          <li class="list-group-item"><%= job.pickup_location %></li>
+          <li class="list-group-item"><%= job.dropoff_location %></li>
+          <li class="list-group-item"><%= job.pickup_date %></li>
+          <li class="list-group-item"><%= job.dropoff_date %></li>
+          <li class="list-group-item"><%= job.description %></li>
+          <li class="list-group-item"><%= job.special_notes %></li>
+          <li class="list-group-item"><%= job.address.address_1 %></li>
+          <li class="list-group-item"><%= job.address.address_2 %></li>
+          <li class="list-group-item"><%= job.address.address_3 %></li>
+          <li class="list-group-item"><%= job.address.province %></li>
+          <li class="list-group-item"><%= job.address.country %></li>
+          <li class="list-group-item"><%= job.address.zip %></li>
+          <li class="list-group-item"><%= link_to 'Edit Pickup or Dropoff Dates', edit_job_path(job) %></li>
           <li class="list-group-item"><%= link_to 'Edit Address', jobs_path(@job, @address) %></li>
         </ul>
       </div>

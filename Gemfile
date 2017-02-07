@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.0.0'
 gem 'cancancan', '~> 1.15.0'
 gem 'turbolinks'
+gem 'bootstrap-datepicker-rails'
 
 
 group :development, :test do
