@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
       shipper_path
     end
   end
+
+  protected
+
+  def after_sign_in_path_for(users)
+    jobs_index
+  end
 end

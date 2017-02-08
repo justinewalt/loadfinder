@@ -6,6 +6,9 @@ Rails.application.routes.draw do
        registrations: 'users/registrations'
      }
 
+     as :user do get '/' => 'user/jobs#index' 
+     end
+
   # GET
   get "/pages/:page" => "pages#show"
 
