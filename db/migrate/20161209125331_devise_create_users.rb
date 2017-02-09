@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.boolean :is_admin,             default: false
       t.boolean :terms_accepted
       t.string :encrypted_password,    null: false, default: ""
-
+      t.belongs_to :company,           foreign_key: true
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

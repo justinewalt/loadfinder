@@ -14,6 +14,7 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.string :billing_country,          null: false
       t.string :billing_zip,              null: false
 
+
       t.timestamps
     end
   end

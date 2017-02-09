@@ -1,4 +1,7 @@
 <div>
+  <% if @jobs.blank? %>
+    <h4>There are no Jobs containing "<%= params[:search] %>".</h4>
+  <% end %>
   <h1>All Posted Jobs</h1>
   <hr />
   <%= button_to 'New Job', new_job_path, method: :get %>

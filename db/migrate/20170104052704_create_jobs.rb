@@ -7,8 +7,9 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.date :dropoff_date,            null: false
       t.text :description,             null: false
       t.text :special_notes
-      t.boolean :delivered
+      t.boolean :delivered,            default: false
 
+      t.belongs_to :user,              foreign_key: true
       t.timestamps
     end
   end

@@ -9,6 +9,10 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
       t.string :province,    null: false, default: ""
       t.string :country,     null: false, default: ""
       t.string :zip,         null: false, default: ""
+      t.integer :shipper_id
+      t.integer :haulier_id
+      t.integer :user_id
+      t.integer :job_id
 
       t.timestamps
     end

@@ -2,11 +2,13 @@ class JobsController < ApplicationController
 	before_action :job, except: [:new, :create, :index]
 
   def index
-  flash[:success] = "You have been signed in"
- 	@jobs = current_user.jobs
-  @jobs = job.paginate(page: params[:page], per_page: 4)
-
-  end
+  	flash[:success] = "You have been signed in"
+		if params[:search]
+	    @jobs = Job.search(params[:search]).order("created_at DESC")
+	  else
+	    @jobs = Job.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
+	  end
+	end
 
   def new
   	@job = current_user.jobs.new
@@ -24,11 +26,9 @@ class JobsController < ApplicationController
   def show
     @bids = @job.bids
     @bids = @job.bids.paginate(page: params[:page], per_page: 4)
-
   end
 
   def edit
-
   end
 
   def update
@@ -48,8 +48,8 @@ class JobsController < ApplicationController
   private
 
   	def job_params
-  		params.require(:job).permit(:category, :bids)
-
+  		params.require(:job).permit(:pickup_location, :dropoff_location, :pickup_date,
+			                            :dropoff_date, :description, :special_notes)
   	end
 
   	def job

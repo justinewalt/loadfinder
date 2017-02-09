@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_up_path_for(resource)
     if resource.company_type == 'Shipper'
-      shipper_path
+      jobs_path
     else
       shipper_path
     end
@@ -11,15 +11,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.company_type == 'Shipper'
-      shipper_path
+      jobs_path
     else
       shipper_path
     end
   end
 
-  protected
-
-  def after_sign_in_path_for(users)
-    jobs_index
-  end
 end

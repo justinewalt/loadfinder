@@ -6,7 +6,7 @@ Rails.application.routes.draw do
        registrations: 'users/registrations'
      }
 
-     as :user do get '/' => 'user/jobs#index' 
+     as :user do get '/' => 'user/jobs#index'
      end
 
   # GET
@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     resources :bids
   end
 
-  get 'shipper', to: 'shipper#home', as: 'shipper'
-  get 'haulier', to: 'haulier#home', as: 'haulier'
+  get 'shipper', to: 'shippers#home', as: 'shipper'
+  get 'haulier', to: 'hauliers#home', as: 'haulier'
 end

@@ -8,6 +8,7 @@ class CreateHauliers < ActiveRecord::Migration[5.0]
       t.integer :truck_vin,           null: false
       t.integer :rating,              defualt: 0
 
+      t.belongs_to :company,          foreign_key: true
       t.timestamps
     end
   end
