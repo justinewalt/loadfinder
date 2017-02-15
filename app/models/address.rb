@@ -1,5 +1,3 @@
 class Address < ApplicationRecord
-  belongs_to :hauliers
-  belongs_to :shippers
-  belongs_to :jobs
+  belongs_to :addressable, polymorphic: true
 end

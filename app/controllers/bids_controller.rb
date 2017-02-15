@@ -41,7 +41,7 @@ class BidsController < ApplicationController
   private
 
   	def bid_params
-  		params.require(:bid).permit(:name)
+  		params.require(:bid).permit(:amount, :expiration)
   	end
 
   	def job

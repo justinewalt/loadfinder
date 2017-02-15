@@ -24,12 +24,12 @@
           <li class="list-group-item"><%= job.dropoff_date %></li>
           <li class="list-group-item"><%= job.description %></li>
           <li class="list-group-item"><%= job.special_notes %></li>
-          <li class="list-group-item"><%= job.address.address_1 %></li>
-          <li class="list-group-item"><%= job.address.address_2 %></li>
-          <li class="list-group-item"><%= job.address.address_3 %></li>
-          <li class="list-group-item"><%= job.address.province %></li>
-          <li class="list-group-item"><%= job.address.country %></li>
-          <li class="list-group-item"><%= job.address.zip %></li>
+          <li class="list-group-item"><%= job.addresses.address_1 %></li>
+          <li class="list-group-item"><%= job.addresses.address_2 %></li>
+          <li class="list-group-item"><%= job.addresses.address_3 %></li>
+          <li class="list-group-item"><%= job.addresses.province %></li>
+          <li class="list-group-item"><%= job.addresses.country %></li>
+          <li class="list-group-item"><%= job.addresses.zip %></li>
           <li class="list-group-item"><%= link_to 'Edit Pickup or Dropoff Dates', edit_job_path(job) %></li>
           <li class="list-group-item"><%= link_to 'Edit Address', jobs_path(@job, @address) %></li>
         </ul>

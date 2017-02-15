@@ -14,6 +14,7 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.integer :job_id
 
+      t.references :addressable, polymorphic: true, index: true
       t.timestamps
     end
   end

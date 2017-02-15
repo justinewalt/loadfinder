@@ -16,18 +16,22 @@ ActiveRecord::Schema.define(version: 20170209032711) do
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "alias",      default: "", null: false
-    t.string   "address_1",  default: "", null: false
+    t.string   "alias",            default: "", null: false
+    t.string   "address_1",        default: "", null: false
     t.string   "address_2"
     t.string   "address_3"
-    t.string   "province",   default: "", null: false
-    t.string   "country",    default: "", null: false
-    t.string   "zip",        default: "", null: false
+    t.string   "province",         default: "", null: false
+    t.string   "country",          default: "", null: false
+    t.string   "zip",              default: "", null: false
     t.integer  "shipper_id"
     t.integer  "haulier_id"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "job_id"
+    t.string   "addressable_type"
+    t.integer  "addressable_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id", using: :btree
   end
 
   create_table "bids", force: :cascade do |t|
@@ -46,12 +50,6 @@ ActiveRecord::Schema.define(version: 20170209032711) do
     t.string   "main_contact_last_name",  default: "", null: false
     t.integer  "main_contact_phone",                   null: false
     t.string   "main_contact_email",      default: "", null: false
-    t.string   "billing_address_1",       default: "", null: false
-    t.string   "billing_address_2"
-    t.string   "billing_address_3"
-    t.string   "billing_province",                     null: false
-    t.string   "billing_country",                      null: false
-    t.string   "billing_zip",                          null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.integer  "user_id"
@@ -70,16 +68,16 @@ ActiveRecord::Schema.define(version: 20170209032711) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "pickup_location",  null: false
-    t.string   "dropoff_location", null: false
-    t.date     "pickup_date",      null: false
-    t.date     "dropoff_date",     null: false
-    t.text     "description",      null: false
+    t.string   "pickup_location",                  null: false
+    t.string   "dropoff_location",                 null: false
+    t.date     "pickup_date",                      null: false
+    t.date     "dropoff_date",                     null: false
+    t.text     "description",                      null: false
     t.text     "special_notes"
-    t.boolean  "delivered"
+    t.boolean  "delivered",        default: false
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["user_id"], name: "index_jobs_on_user_id", using: :btree
   end
 

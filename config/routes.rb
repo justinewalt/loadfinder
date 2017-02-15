@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :bids
   end
 
-  get 'shipper', to: 'shippers#home', as: 'shipper'
-  get 'haulier', to: 'hauliers#home', as: 'haulier'
+
+  get 'shipper', to: 'shippers#index', as: 'shipper'
+  get 'haulier', to: 'hauliers#index', as: 'haulier'
 end

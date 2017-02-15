@@ -1,5 +1,5 @@
 class Haulier < ApplicationRecord
   belongs_to :users
   has_many :jobs
-  has_many :addresses
+  has_many :addresses, :as => :addressable
 end

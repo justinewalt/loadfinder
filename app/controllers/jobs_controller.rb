@@ -49,12 +49,24 @@ class JobsController < ApplicationController
 
   	def job_params
   		params.require(:job).permit(:pickup_location, :dropoff_location, :pickup_date,
-			                            :dropoff_date, :description, :special_notes)
+			                            :dropoff_date, :description, :special_notes, :delivered)
   	end
 
   	def job
-  		@job = job.find(params[:id])
+  		@job = Job.find(params[:id])
   	end
 
+		def bid
+			@bid = Job.bid.find(params[:id])
+		end
 
+		def address
+			@address = Job.address.find(params[:id])
+		end
+
+		def address_params
+			params.require(:address).permit(:alias, :address_1, :address_2, :address_3,
+																			:province, :country, :zip)
+		end
+		
 end
