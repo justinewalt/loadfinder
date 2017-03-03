@@ -16,6 +16,17 @@ Rails.application.routes.draw do
     resources :bids
   end
 
+  resources :jobs do
+    resources :addresses
+  end
+
+  resources :bids do
+    resources :addresses
+  end
+
+  resources :users do
+    resources :addresses
+  end
 
   get 'shipper', to: 'shippers#index', as: 'shipper'
   get 'haulier', to: 'hauliers#index', as: 'haulier'

@@ -1,0 +1,58 @@
+<%= form_for [@addressable, @address] do |f| %>
+  <% if @address.errors.any? %>
+    <div class="error_messages">
+      <h2>Please correct the following errors.</h2>
+      <ul>
+      <% @address.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :alias %>
+    <%= f.text_field :alias,  autofocus: true %>
+  </div><br/>
+
+  <div class="field">
+    <%= f.label :address_1 %>
+    <%= f.text_field :address_1 %>
+  </div><br/>
+
+  <div class="field">
+    <%= f.label :address_2 %>
+    <%= f.text_field :address_2 %>
+  </div><br/>
+
+  <div class="field">
+    <%= f.label :address_3 %>
+    <%= f.text_field :address_3 %>
+  </div><br/>
+
+  <div class="field">
+    <%= f.label :province %>
+    <%= f.text_field :province %>
+  </div><br/>
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div><br/>
+
+  <div class="field">
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </div><br/>
+
+	<%= f.submit %>
+
+<% end %>
+
+t.string   "alias",            default: "", null: false
+t.string   "address_1",        default: "", null: false
+t.string   "address_2"
+t.string   "address_3"
+t.string   "province",         default: "", null: false
+t.string   "country",          default: "", null: false
+t.string   "zip",              default: "", null: false

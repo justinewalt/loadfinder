@@ -6,7 +6,7 @@ class JobsController < ApplicationController
 		if params[:search]
 	    @jobs = Job.search(params[:search]).order("created_at DESC")
 	  else
-	    @jobs = Job.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
+	    @jobs = Job.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
 	  end
 	end
 
@@ -68,5 +68,5 @@ class JobsController < ApplicationController
 			params.require(:address).permit(:alias, :address_1, :address_2, :address_3,
 																			:province, :country, :zip)
 		end
-		
+
 end
